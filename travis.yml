@@ -24,3 +24,7 @@ deploy:
   app: labdevopsvinissius
   on:
       branch: main
+<<<<<<< HEAD
+=======
+
+>>>>>>> c28422a70c7108a97ceb63852b63bd539f967d4f
