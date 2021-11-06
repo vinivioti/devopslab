@@ -11,7 +11,7 @@ python:
 
 addons:
   sonarcloud:
-    organization: devopslab
+    organization: vinivioti
     token: ${SONAR_TOKEN}
 
 jobs:
@@ -43,7 +43,7 @@ jobs:
         app: labdevopsvinissius
         on:
           branch: main
-          
+
     - stage: Stage Test
       name: GET URL Stage
       script: curl https://devopslab-gabydias.herokuapp.com/ | grep Vou || travis_terminate 1;    
