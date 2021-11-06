@@ -11,7 +11,7 @@ os: linux
 
 addons:
   sonarcloud:
-    organization: vinivioti
+    organization: devopslab
     token: ${SONAR_TOKEN}
 
 jobs:
