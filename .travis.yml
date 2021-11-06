@@ -17,7 +17,7 @@ jobs:
   include:
     - stage: Build & Tests
       name: "Unit Test, Quality & Security"
-      
+
       # Instalação de Módulos que são necessários para a Aplicação.
       install:
         - pip install flask flask-wtf coverage
@@ -40,4 +40,4 @@ jobs:
 
     - stage: STG TEST
       script:
-        - curl https://labdevopsvinissius.herokuapp.com/ | grep Hello || travis_terminate 1;
+        - curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar nessa matéria !!!" || travis_terminate 1;
