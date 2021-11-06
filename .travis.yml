@@ -40,4 +40,4 @@ jobs:
 
     - stage: STG TEST
       script:
-        - curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar nessa matéria !!!" || travis_terminate 1;
+        - curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar" || travis_terminate 1;
