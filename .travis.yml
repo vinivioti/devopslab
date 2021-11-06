@@ -61,5 +61,5 @@ jobs:
     - stage: Production Test
       name: GET URL Production
       script:
-        - curl https://lab-devops-cloud-330320.uc.r.appspot.com/ | grep Hello || travis_terminate 1;    
+        - curl https://lab-devops-cloud-330320.uc.r.appspot.com/ | grep Vou detonar || travis_terminate 1;    
         
