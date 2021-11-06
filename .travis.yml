@@ -6,8 +6,8 @@ python:
   - "3.8"
 
 # Versão do Ubuntu
-# dist: focal
-# os: linux
+ dist: focal
+ os: linux
 
 addons:
   sonarcloud:
@@ -32,12 +32,12 @@ jobs:
 
     - stage: Stage Deploy
       name: Heroku Deploy
-      # script: skip
+      script: skip
 
       # Definir o Deploy no Heroku
       deploy:
         provider: heroku
-        # strategy: api
+        strategy: api
         api_key: $HEROKU_API_KEY
         edge: true
         app: labdevopsvinissius
@@ -46,4 +46,5 @@ jobs:
 
     - stage: Stage Test
       name: GET URL Stage
-      script: curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar nessa matéria !!!" || travis_terminate 1;    
+      script: 
+        - curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar nessa matéria !!!" || travis_terminate 1;    
