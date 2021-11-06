@@ -32,12 +32,12 @@ jobs:
 
     - stage: Stage Deploy
       name: Heroku Deploy
-      script: skip
+      # script: skip
 
       # Definir o Deploy no Heroku
       deploy:
         provider: heroku
-        strategy: api
+        # strategy: api
         api_key: $HEROKU_API_KEY
         edge: true
         app: labdevopsvinissius
