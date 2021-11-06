@@ -25,9 +25,12 @@ jobs:
         - coverage run test.py || travis_terminate 1;
         - coverage report app.py || travis_terminate 1;
         - coverage xml app.py || travis_terminate 1;
-
-    - stage: STG Deploy
-      script: skip
+        - sonar-scanner || travis_terminate 1;
+  
+    - stage: Stage Deploy
+      name: Heroku Deploy
+      script: skip  
+      
       # Definir o Deploy no Heroku
       deploy:
         provider: heroku
@@ -38,6 +41,25 @@ jobs:
         on:
           branch: main
 
-    - stage: STG TEST
+    - stage: Stage Test
+      name: GET URL Stage    
       script:
         - curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar" || travis_terminate 1;
+        
+    - stage: Production Deploy
+      name: Google Api Engine
+      script: skip
+
+      # Definir o Deploy no Google Cloud
+      deploy:
+        provider: gae
+        keyfile: ../gcpterraformkey.json
+        project: lab-devops-cloud-330320
+        on:
+          branch: main
+
+    - stage: Production Test
+      name: GET URL Production
+      script:
+        - curl https://lab-devops-cloud-330320.uc.r.appspot.com/ | grep Hello || travis_terminate 1;    
+        
