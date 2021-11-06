@@ -1,5 +1,3 @@
-print("Hello World")
-
 
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
@@ -12,9 +10,6 @@ csrf = CSRFProtect(app)
 def pagina_inicial():
     return "Vou detonar nessa matéria !!!"
 
-if __name__ == '__main__':
-   
-    app.run()
 
 @app.route("/soma")
 def soma_valores():
