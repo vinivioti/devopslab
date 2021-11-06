@@ -6,8 +6,8 @@ python:
   - "3.8"
 
 # Versão do Ubuntu
-dist: focal
-os: linux
+# dist: focal
+# os: linux
 
 addons:
   sonarcloud:
@@ -43,7 +43,7 @@ jobs:
         app: labdevopsvinissius
         on:
           branch: main
-      - stage: Stage Test
-        name: GET URL Stage
-        script:
-          - curl https://devopslab-gabydias.herokuapp.com/ | grep Vou || travis_terminate 1;    
+          
+    - stage: Stage Test
+      name: GET URL Stage
+      script: curl https://devopslab-gabydias.herokuapp.com/ | grep Vou || travis_terminate 1;    
