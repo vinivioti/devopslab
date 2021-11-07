@@ -12,6 +12,9 @@ addons:
   sonarcloud:
     organization: vinivioti
     token: ${SONAR_TOKEN}
+    
+before_install:
+  - openssl aes-256-cbc -K $encrypted_563738b92e82_key -iv $encrypted_563738b92e82_iv -in gcpkey.json.enc -out ../gcpkey.json -d    
      
 jobs:
   include:
@@ -53,7 +56,7 @@ jobs:
       # Definir o Deploy no Google Cloud
       deploy:
         provider: gae
-        keyfile: ../gcpterraformkey.json
+        keyfile: ../gcpkey.json
         project: lab-devops-cloud-330320
         on:
           branch: main
