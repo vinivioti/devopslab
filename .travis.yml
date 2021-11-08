@@ -47,7 +47,7 @@ jobs:
     - stage: Stage Test
       name: GET URL Stage    
       script:
-        - curl https://labdevopsvinissius.herokuapp.com/ | grep "Vou detonar" || travis_terminate 1;
+        - curl https://labdevopsvinissius.herokuapp.com/ | grep "Sofri mas consegui kkk" || travis_terminate 1;
         
     - stage: Production Deploy
       name: Google Api Engine
@@ -64,6 +64,6 @@ jobs:
     - stage: Production Test
       name: GET URL Production
       script:
-        - curl https://lab-devops-cloud-330320.uc.r.appspot.com/ | grep "Vou detonar nessa matéria !!!" || travis_terminate 1;   
+        - curl https://lab-devops-cloud-330320.uc.r.appspot.com/ | grep "Sofri mas consegui kkk" || travis_terminate 1;   
                
         
