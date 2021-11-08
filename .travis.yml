@@ -56,7 +56,7 @@ jobs:
       # Definir o Deploy no Google Cloud
       deploy:
         provider: gae
-        keyfile: ../gcpkey.json
+        keyfile: ../gcpterraformkey.json
         project: lab-devops-cloud-330320
         on:
           branch: main
